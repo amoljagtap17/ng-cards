@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+      <h3 class="title is-1">Payment Form</h3>
+      <div class="columns">
+        <div class="column">
+          <div class="field">
+            <label class="label is-pulled-left">Payee Name</label>
+            <div class="control">
+              <input
+                class="input"
+                (input)="onNameChange($event.target.value)"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <label class="label is-pulled-left">Name</label>
+          <div>
+            {{ name | titlecase }}
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <div class="field">
+            <label class="label is-pulled-left">Payment Date</label>
+            <div class="control">
+              <input
+                class="input"
+                type="date"
+                (input)="onDateChange($event.target.value)"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <label class="label is-pulled-left">Payment Date</label>
+          <div>
+            {{ date | date: "MMMM d, y" }}
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <div class="field">
+            <label class="label is-pulled-left">Payment Amount</label>
+            <div class="control">
+              <input
+                class="input"
+                (input)="onAmountChange($event.target.value)"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <label class="label is-pulled-left">Payment Amount</label>
+          <div>
+            {{ amount | currency: "INR" }}
+          </div>
+        </div>
+      </div>
+      {{ car | json }}
+    </div>
+  </div>
+</div>
